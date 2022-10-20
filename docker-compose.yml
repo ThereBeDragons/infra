@@ -1,0 +1,20 @@
+---
+version: "3"
+
+services:
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:edge
+    container_name: audiobookshelf
+    extends:
+      file: docker-compose_base.yml
+      service: base
+    environment:
+      AUDIOBOOKSHELF_UID: 99
+      AUDIOBOOKSHELF_GID: 100
+    ports:
+      - 13378:80/tcp
+    restart: unless-stopped
+    volumes:
+      - ~/Audiobooks:/audiobooks
+      - ~/.config/audiobookshelf/config:/config
+      - ~/.config/audiobookshelf/metadata:/metadata
