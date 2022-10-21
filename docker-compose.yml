@@ -18,3 +18,15 @@ services:
       - ~/Audiobooks:/audiobooks
       - ~/.config/audiobookshelf/config:/config
       - ~/.config/audiobookshelf/metadata:/metadata
+      
+  komga:
+    image: gotson/komga:latest
+    container_name: komga
+    volumes:
+      - ~/.config/komga/config:/config
+      - ~/Calibre Library:/data
+      - /Volumes/Expansion/Media/Comics:/data2
+    ports:
+      - 8080:8080
+    user: "1000:1000"
+    restart: unless-stopped
