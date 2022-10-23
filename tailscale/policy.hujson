@@ -13,8 +13,8 @@
 		},
 		{
 			"action": "accept",
-			"users":  ["group:sre"],
-			"ports":  ["*:*"],
+			"src":  ["group:sre"],
+			"dst":  ["*:*"],
 		},
 	],
 	"ssh": [
