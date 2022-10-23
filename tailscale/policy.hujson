@@ -1,3 +1,6 @@
+// This tailnet's ACLs are maintained in 
+// https://github.com/ThereBeDragons/infra/blob/main/tailscale/policy.hujson
+
 {
 	"groups": {
 		"group:family":  [],
