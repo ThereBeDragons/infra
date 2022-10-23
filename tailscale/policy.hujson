@@ -1,0 +1,31 @@
+{
+	"groups": {
+		"group:family":  [],
+		"group:friends": [],
+		"group:sre":     ["Harwood@github"],
+	},
+	"acls": [
+		// all employees can access their own devices
+		{ 
+			"action": "accept",
+			"src": ["autogroup:members"],
+			"dst": ["autogroup:self:*"],
+		{
+			"action": "accept",
+			"users":  ["group:sre"],
+			"ports":  ["*:*"],
+		},
+	],
+	"ssh": [
+		{
+			"action": "accept",
+			"src":    ["group:sre"],
+			"dst":    ["tag:tailscale"],
+			"users":  ["root", "autogroup:nonroot"],
+		},
+	],
+	"tagOwners": {
+		// users in group:sre can apply the tag tag:prod
+		"tag:tailscale": ["group:sre"],
+	},
+}
