@@ -3,7 +3,10 @@
 
 {
 	"groups": {
-		"group:family":  [],
+		"group:family":  [
+			"Harwood@github",
+			"susan.c.harwood@gmail.com",
+		],
 		"group:friends": [],
 		"group:sre":     ["Harwood@github"],
 	},
