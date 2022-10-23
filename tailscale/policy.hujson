@@ -3,7 +3,10 @@
 
 {
 	"groups": {
-		"group:family":  [],
+		"group:family":  [
+			"Harwood@github",
+			"susan.c.harwood@gmail.com",
+		],
 		"group:friends": [],
 		"group:sre":     ["Harwood@github"],
 	},
@@ -19,6 +22,11 @@
 			"src":  ["group:sre"],
 			"dst":  ["*:*"],
 		},
+		{
+			"action": "accept",
+			"src": ["group:family"],
+			"dst": ["tag:dns:53"],
+		},
 	],
 	"ssh": [
 		{
@@ -31,5 +39,6 @@
 	"tagOwners": {
 		// users in group:sre can apply the tag tag:prod
 		"tag:tailscale": ["group:sre"],
+		"tag:dns": ["group:sre"],
 	},
 }
